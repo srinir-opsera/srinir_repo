@@ -1,5 +1,12 @@
+# pom file uses JDK 11. Using JDK 17 in docker will cause mismatch of JDK
 # FROM openjdk:17-jdk-slim
-FROM openjdk:11-jdk-slim
+
+# Tried using this. Got 
+# ERROR: docker.io/library/openjdk:11-jdk-slim: not found
+# Looks lie this version of jdk is no longer dupported in Docker Hub
+#FROM openjdk:11-jdk-slim
+
+FROM eclipse-temurin:11-jdk-slim
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
