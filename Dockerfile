@@ -6,7 +6,10 @@
 # Looks lie this version of jdk is no longer dupported in Docker Hub
 #FROM openjdk:11-jdk-slim
 
-FROM eclipse-temurin:11-jdk-slim
+# This is also not found
+# FROM eclipse-temurin:11-jdk-slim
+
+FROM eclipse-temurin:11-jdk
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080
